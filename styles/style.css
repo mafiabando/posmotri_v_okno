@@ -78,10 +78,6 @@ ol {
   block-size: 100%;
 }
 
-.title {
-  margin-bottom: 26px;
-}
-
 .result__video-container {
   position: relative;
   inline-size: 711px;
@@ -92,6 +88,8 @@ ol {
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 li:not(:last-child) {
@@ -122,6 +120,7 @@ li:not(:last-child) {
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
+  margin-bottom: 26px; 
 }
 
 .content__accent {
@@ -134,15 +133,20 @@ li:not(:last-child) {
 }
 
 .content__video-card-title {
+  max-inline-size: 200px;
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
   padding-bottom: 6px;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden;
 }
 
 .content__video-card-description {
+  max-inline-size: 200px;
   line-height: 16.2px;
 }
 
@@ -162,7 +166,7 @@ fieldset {
   font-size: 18px;
   font-weight: 700;
   background: transparent;
-  border: 1px solid #FFF;
+  border: 1px solid currentColor;
   height: 34px; 
 }
 
@@ -192,10 +196,12 @@ fieldset {
   inline-size: 225px;
   block-size: 27px;
   border: none;
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
   background: transparent;
   color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
 }
 
 .search-form__textfield::placeholder {
@@ -250,26 +256,22 @@ input[type="text"]:focus {
   background: #FFF;
 }
 
-.search-form__submit-button:active {
+.button:active {
   background: #545050;
 }
 
-.search-form__submit-button:hover {
+.button:hover {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   text-underline-offset: 2px;
 }
 
 
-.content__video-card:active {
+.content__card-link:active {
   background: #545050;
 }
 
-.content__video-card:active {
-  background: #545050;
-}
-
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   text-underline-offset: 2px;
@@ -279,7 +281,7 @@ input[type="text"]:focus {
   outline: 1px solid #FFF; 
 }
 
-.search-form__submit-button:focus-visible {
+.button:focus-visible {
   outline: 1px #fff solid;
   outline-offset: 1px;
 }
